@@ -38,7 +38,7 @@ TOTP auth codes are derived from key hash and current time.
 Please ensure that system clock are adjusted via NTP.
 Acceptable fault threshold is about ~1 min.
 
-The keychain itself is stored UNENCRYPTED in `$HOME/.gauth`.
+The keychain itself is stored **UNENCRYPTED** in `$HOME/.gauth`.
 Take measures to encrypt your partitions (haven't you done this yet?)
 
 ### Example
@@ -49,7 +49,6 @@ Add it to 2fa under the name google, typing the secret at the prompt:
 
 	$ gauth -add google
 	gauth key for google: <secret>
-	$
 
 Whenever Google prompts for a 2fa code, run gauth to obtain one:
 

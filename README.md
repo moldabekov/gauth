@@ -17,8 +17,7 @@
 	gauth name
 
 To add a new key to keychain use "gauth -add name", where name is a given name.
-It'll prompt a 2fa key from stdin
-2fa keys are case-insensitive strings [A-Za-z2-7].
+It'll prompt a 2fa key from stdin. 2fa keys are case-insensitive strings [A-Za-z2-7].
 
 Default generation algorithm is time based auth codes
 (TOTP - the same as Google Authenticator)

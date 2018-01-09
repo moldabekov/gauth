@@ -92,7 +92,6 @@ var (
 )
 
 func help() {
-	fmt.Println(os.Args[0])
 	fmt.Fprintf(os.Stderr, "usage:\n")
 	fmt.Fprintf(os.Stderr, "\t%s -add [-hotp] keyname\n", os.Args[0])
 	fmt.Fprintf(os.Stderr, "\t%s -list\n", os.Args[0])

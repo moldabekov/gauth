@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/moldabekov/gauth.svg?branch=master)](https://travis-ci.org/moldabekov/gauth)
+[![Go Report Card](https://goreportcard.com/badge/github.com/moldabekov/gauth)](https://goreportcard.com/report/github.com/moldabekov/gauth)
 ## gauth is a two-factor authentication agent.
 
 ### Installation:

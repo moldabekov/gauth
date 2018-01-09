@@ -1,5 +1,13 @@
 ## gauth is a two-factor authentication agent.
 
+### Installation:
+
+0. Grab `gauth` from Release page and place it in your `$PATH`
+
+1. Please ensure that you set `$GOPATH` and have `$GOPATH/bin` in your `$PATH`.
+
+	`go get -u github.com/moldabekov/gauth`
+	
 ### Usage:
 
 	gauth -add [-hotp] name

@@ -8,7 +8,7 @@ You have 2 ways to get `gauth`:
 
 0. Grab `gauth` from Release page and place it in your `$PATH`.
 
-1. Please ensure that you set `$GOPATH` and have `$GOPATH/bin` in your `$PATH`.
+1. Please ensure that you set `$GOPATH` and have `$GOPATH/bin` in your `$PATH`. Then run the following command:
 
 	`go get -u github.com/moldabekov/gauth`
 	
@@ -18,24 +18,22 @@ You have 2 ways to get `gauth`:
 	gauth -list
 	gauth name
 
-To add a new key to keychain use "gauth -add name", where name is a given name.
-It'll prompt a 2fa key from stdin. 2fa keys are case-insensitive strings [A-Za-z2-7].
+To add a new key to keychain use "gauth -add name", where name is a given service name (such as gmail, github and so on).
+It'll prompt a 2fa key from stdin. 2fa keys are case-insensitive strings [A-Z2-7].
 
-Default generation algorithm is time based auth codes
-(TOTP - the same as Google Authenticator)
+Default generation algorithm is time based auth codes (TOTP - the same as Google Authenticator).
 
 There is also *EXPERIMENTAL* support of counter based auth codes (HOTP).
 
-To list all names in the keychain use `gauth -list`
+To list all entries in the keychain use `gauth -list`
 
 To print certain 2fa auth code use `gauth name`
 
-If no arguments are provided, gauth prints all 2fa TOTP auth codes.
+If no arguments are provided, `gauth` prints all 2fa TOTP auth codes.
 
 **IMPORTANT NOTE:**
 
-TOTP auth codes are derived from key hash and current time.
-Please ensure that system clock are adjusted via NTP.
+TOTP auth codes are derived from key hash and current time. Please ensure that system clock is adjusted via NTP.
 Acceptable fault threshold is about ~1 min.
 
 The keychain itself is stored **UNENCRYPTED** in `$HOME/.gauth`.

@@ -6,7 +6,7 @@
 
 You have 2 ways to get `gauth`:
 
-0. Grab `gauth` from Release page and place it in your `$PATH`.
+0. Grab `gauth` from [Release page](https://github.com/moldabekov/gauth/releases) and place it in your `$PATH`.
 
 1. Please ensure that you set `$GOPATH` and have `$GOPATH/bin` in your `$PATH`. Then run the following command:
 

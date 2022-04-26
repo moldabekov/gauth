@@ -1,0 +1,67 @@
+# REF: https://github.com/goreleaser/example/blob/master/.goreleaser.yaml
+
+project_name: gauth
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+dockers:
+  - image_templates: 
+    - "ghcr.io/slmingol/gauth:{{ .Tag }}"
+    - "slmingol/gauth:{{ .Tag }}"
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--pull"
+      - "--label=org.opencontainers.image.created={{ .Date }}"
+      - "--label=org.opencontainers.image.description={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.licenses=MIT"
+      - "--label=org.opencontainers.image.name={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.source={{ .GitURL }}"
+      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.url={{ .GitURL }}"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+      - "--platform=linux/amd64"
+
+brews:
+  - tap:
+      owner: slmingol
+      name: homebrew-tap
+    folder: Formula
+    homepage: https://www.github.com/slmingol/gauth
+    description: "Command line 2FA Authentication"
+    license: "MIT"
+    commit_author:
+      name: goreleaserbot
+      email: goreleaser@lamolabs.org
+    dependencies:
+      - name: go
+      - name: coreutils
+    test: |
+      system "#{bin}/gauth"
+    install: |
+      bin.install "gauth"
+

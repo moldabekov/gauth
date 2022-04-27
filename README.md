@@ -1,6 +1,6 @@
 [![license](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
-[![build-release](https://github.com/slmingol/gorelease_ex/actions/workflows/build-release.yml/badge.svg)](https://github.com/slmingol/gorelease_ex/actions/workflows/build-release.yml)
-[![Tag](https://img.shields.io/github/v/tag/slmingol/gorelease_ex)](https://github.com/slmingol/gorelease_ex/tags)
+[![build-release](https://github.com/slmingol/gauth/actions/workflows/build-release.yml/badge.svg)](https://github.com/slmingol/gauth/actions/workflows/build-release.yml)
+[![Tag](https://img.shields.io/github/v/tag/slmingol/gauth)](https://github.com/slmingol/gauth/tags)
 [![Go Report Card](https://goreportcard.com/badge/github.com/slmingol/gauth)](https://goreportcard.com/report/github.com/slmingol/gauth)
 
 ## gauth is a two-factor authentication agent

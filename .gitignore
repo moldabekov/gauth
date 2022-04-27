@@ -1,0 +1,7 @@
+bin/
+vendor/
+.DS_STORE
+.idea
+*.iml
+dist/
+build/

@@ -10,7 +10,7 @@ You have several ways to get `gauth`:
 
 1. Please ensure that you set `$GOPATH` and have `$GOPATH/bin` in your `$PATH`. Then run the following command:
 
-	`go install github.com/moldabekov/gauth@latest`
+	`go install github.com/slmingol/gauth@latest`
 
 2. Install via `brew`:
  

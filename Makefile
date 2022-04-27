@@ -17,3 +17,7 @@ compile:
 
 build: compile test lint
 
+
+# git tag ....
+# git tag -l
+# git push origin --tags

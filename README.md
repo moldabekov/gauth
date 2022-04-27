@@ -1,8 +1,11 @@
-[![Build Status](https://travis-ci.org/moldabekov/gauth.svg?branch=master)](https://travis-ci.org/moldabekov/gauth)
-[![Go Report Card](https://goreportcard.com/badge/github.com/moldabekov/gauth)](https://goreportcard.com/report/github.com/moldabekov/gauth)
-## gauth is a two-factor authentication agent.
+[![license](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
+[![build-release](https://github.com/slmingol/gorelease_ex/actions/workflows/build-release.yml/badge.svg)](https://github.com/slmingol/gorelease_ex/actions/workflows/build-release.yml)
+[![Tag](https://img.shields.io/github/v/tag/slmingol/gorelease_ex)](https://github.com/slmingol/gorelease_ex/tags)
+[![Go Report Card](https://goreportcard.com/badge/github.com/slmingol/gauth)](https://goreportcard.com/report/github.com/slmingol/gauth)
 
-### Installation:
+## gauth is a two-factor authentication agent
+
+### Installation
 
 You have several ways to get `gauth`:
 
@@ -23,7 +26,7 @@ You have several ways to get `gauth`:
     `docker pull slmingol/gauth`
 
 	
-### Usage:
+### Usage
 
 	gauth -add [-hotp] name
 	gauth -list

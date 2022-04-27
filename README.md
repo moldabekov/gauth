@@ -4,13 +4,24 @@
 
 ### Installation:
 
-You have 2 ways to get `gauth`:
+You have several ways to get `gauth`:
 
-0. Grab `gauth` from [Release page](https://github.com/moldabekov/gauth/releases) and place it in your `$PATH`.
+0. Grab `gauth` from [Release page](https://github.com/slmingol/gauth/releases) and place it in your `$PATH`.
 
 1. Please ensure that you set `$GOPATH` and have `$GOPATH/bin` in your `$PATH`. Then run the following command:
 
-	`go get -u github.com/moldabekov/gauth`
+	`go install github.com/moldabekov/gauth@latest`
+
+2. Install via `brew`:
+ 
+    `brew install slmingol/tap/gauth`
+
+3. Docker:
+
+    `docker pull ghcr.io/slmingol/gauth`
+    -or-
+    `docker pull slmingol/gauth`
+
 	
 ### Usage:
 

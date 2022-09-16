@@ -58,7 +58,6 @@ import (
 	"encoding/binary"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -106,7 +105,7 @@ func readKeychain(file string) *Keychain {
 		file: file,
 		keys: make(map[string]Key),
 	}
-	data, err := ioutil.ReadFile(file)
+	data, err := os.ReadFile(file)
 	if err != nil {
 		if os.IsNotExist(err) {
 			return c
@@ -197,7 +196,9 @@ func (c *Keychain) add(name string) {
 		log.Fatalf("opening keychain: %v", err)
 	}
 	// vital
-	f.Chmod(0600)
+	if err := f.Chmod(0600); err != nil {
+		log.Fatalf("failed to chmod file: %v", err)
+	}
 
 	if _, err := f.Write([]byte(line)); err != nil {
 		log.Fatalf("adding key: %v", err)
@@ -275,7 +276,12 @@ func genTOTP(key []byte, t time.Time, digits int) int {
 
 func genHOTP(key []byte, counter uint64, digits int) int {
 	h := hmac.New(sha1.New, key)
-	binary.Write(h, binary.BigEndian, counter)
+	if h != nil {
+		log.Fatalf("failed to create hmac: %v", h)
+	}
+	if err := binary.Write(h, binary.BigEndian, counter); err != nil {
+		log.Fatalf("failed to write: %v", err)
+	}
 	sum := h.Sum(nil)
 	v := binary.BigEndian.Uint32(sum[sum[len(sum)-1]&0x0F:]) & 0x7FFFFFFF
 	d := uint32(1)
